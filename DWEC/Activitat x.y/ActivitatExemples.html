@@ -1,0 +1,408 @@
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="Activitatexemplecss.css"/>
+	<title>Activitat 1.3</title>
+</head>
+<body>
+	<h1>Activitat 1.3</h1>
+	<table>
+	<caption>Exemples JavaScript</caption>
+	<tr class="capcalera">
+		<td>Conepte</td>
+		<td>Exemple</td>
+		<td>Resultat
+	</td>
+	</tr>
+	<tr>
+		<td class="capcalera">Variables</td>
+		<td>
+			<p>Declaracio de variables</p>
+		<pre>
+			&lt;id=&quot;num&quot;&gt;
+
+			&lt;script&gt;
+
+			var x = 5;
+			var y = 6;
+			document.getElementById(&quot;num&quot;).innerHTML = x + y;
+			document.getElementById(&quot;num&quot;).innerHTML = x;
+			document.getElementById(&quot;num&quot;).innerHTML = y;
+
+			&lt;script&gt;
+			&lt;/pre&gt;
+		</td>
+		<td>
+			<p id="num"/>
+			<script>
+			var x = 5;
+			var y = 6;
+			document.getElementById("num").innerHTML = x + y;
+			document.getElementById("num").innerHTML = x;
+			document.getElementById("num").innerHTML = y;
+			</script>
+
+		</td>
+	</tr>
+	<tr>
+		<td class="capcalera">Data Types</td>
+		<td>
+			<p>Tipus de variable</p>
+			<pre>
+			DINAMIC TYPES
+			var x;   
+			var x = 5;       
+			var x = "John";
+			
+			STRING TYPES
+			var carName1 = "Volvo XC60";
+			var answer = "It's alright";
+			
+			NUMBER TYPES
+			var x1 = 34.00;
+			var y = 123e5;
+			var z = 123e-5;
+			
+			ARRAYS
+			var cars = ["Saab", "Volvo", "BMW"];
+			</pre>
+		</td>
+		<td>-</td>
+	</tr>
+	<tr>
+		<td class="capcalera">Objects</td>
+		<td>
+			<p>Crear un Objetce:</p>
+			<pre>
+			&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;
+
+			&lt;script&gt;
+			var person = {firstName:&quot;John&quot;, 
+			lastName:&quot;Doe&quot;, 
+			age:50, eyeColor:&quot;blue&quot;};
+
+			document.getElementById(&quot;demo&quot;).innerHTML =
+			person.firstName + &quot; te &quot; + person.age + &quot; anys.&quot;;
+			&lt;/script&gt;
+			</pre>
+		</td>
+		<td>
+			<p id="demo"></p>
+
+			<script>
+			var person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+
+			document.getElementById("demo").innerHTML =
+			person.firstName + " te " + person.age + " anys.";
+			</script>
+		</td>
+	</tr>
+	<tr>
+		<td class="capcalera">Functions</td>
+		<td>
+			<p>Crida una funcio, fa un calcul i retorna el resultat</p>
+			<pre>
+			&lt;id=&quot;ex&quot;&gt;
+
+			&lt;script&gt;
+			function myFunction(a, b) {
+			return a * b;
+			}
+			document.getElementById(&quot;ex&quot;).innerHTML = 
+			myFunction(4, 3);
+			&lt;/script&gt;
+			</pre>
+		</td>
+		<td>
+
+			<p id="ex"></p>
+
+			<script>
+			function myFunction(a, b) {
+				return a * b;
+			}
+			document.getElementById("ex").innerHTML = myFunction(4, 3);
+			</script>
+		</td>
+	</tr>
+	<tr>
+		<td class="capcalera">Operators</td>
+		<td>
+			<p>Exempel de sumes amb nombres i cadenes</p>
+
+			<pre>
+			&lt;p id=&quot;sumes&quot;&gt;&lt;/p&gt;
+
+			&lt;script&gt;
+
+			var x = 5 + 5;
+			var y = &quot;5&quot; + 5;
+			var z = &quot;Hello&quot; + 5;
+
+			document.getElementById(&quot;sumes&quot;).innerHTML =
+			x + &quot;&lt;br&gt;&quot; +
+			y + &quot;&lt;br&gt;&quot; +
+			z;
+
+			&lt;/script&gt;
+						/script>
+
+			</pre>
+		</td>
+		<td>
+
+			<p id="sumes"></p>
+
+			<script>
+
+				var x = 5 + 5;
+				var y = "5" + 5;
+				var z = "Hello" + 5;
+
+				document.getElementById("sumes").innerHTML =
+				x + "<br>" +
+				y + "<br>" +
+				z;
+
+			</script>
+
+		</td>
+	</tr>
+	<tr>
+		<td class="capcalera">Comparisons</td>
+		<td>
+			<p>Comparar l'edat amb un botó</p>
+			
+			<pre>
+			&lt;input id=&quot;age&quot; value=&quot;18&quot; /&gt;
+
+			&lt;button onclick=&quot;myFunction()&quot;&gt;Try it&lt;/button&gt;
+
+			&lt;p id=&quot;pro&quot;&gt;&lt;/p&gt;
+
+			&lt;script&gt;
+			function myFunction() {
+			var age,voteable;
+			age = document.getElementById(&quot;age&quot;).value;
+			voteable = (age &lt; 18) ? &quot;
+			Massa Jove&quot;:&quot;Edat adequada&quot;;
+			document.getElementById(&quot;pro&quot;).innerHTML =
+			voteable + &quot; per votar.&quot;;
+			}
+			&lt;/script&gt;
+			</pre>
+		</td>
+		<td>
+
+			<input id="age" value="18" />
+
+			<button onclick="A()">Try it</button>
+
+			<p id="pro"></p>
+
+			<script>
+			function A() {
+				var age,voteable;
+				age = document.getElementById("age").value;
+				voteable = (age < 18) ? "Massa jove":"Edat adequada";
+				document.getElementById("pro").innerHTML = voteable + " per votar.";
+			}
+			</script>
+			
+			</td>
+	</tr>
+	<tr>
+		<td class="capcalera">Conditions</td>
+		<td>
+			<p>Condicions segons l'hora actual amb un botó</p>
+		<pre>
+			&lt;button onclick=&quot;myFunction()&quot;&gt;Clica&lt;/button&gt;
+
+			&lt;p id=&quot;dia&quot;&gt;&lt;/p&gt;
+
+			&lt;script&gt;
+			function myFunction() {
+			var greeting;
+			if (new Date().getHours() &lt; 20) {
+			greeting = &quot;Bon dia!!&quot;;
+			} else {
+			greeting = &quot;Bona nit&quot;;
+			}
+			document.getElementById(&quot;dia&quot;).innerHTML = greeting;
+			}
+			&lt;/script&gt;
+		</pre>
+		</td>
+		<td>
+			<button onclick="B()">Clica</button>
+
+			<p id="dia"></p>
+
+			<script>
+			function B() {
+				var greeting;
+				if (new Date().getHours() < 20) {
+					greeting = "Bon dia!!";
+				} else {
+					greeting = "Bona nit";
+				}
+				document.getElementById("dia").innerHTML = greeting;
+			}
+			</script>
+		</td>
+	</tr>
+	<tr>
+		<td class="capcalera">Switch</td>
+		<td>
+			<p>Switch amb botó que et diu el dia actual</p>
+			
+		<pre>
+			&lt;button onclick=&quot;myFunction()&quot;&gt;Try it&lt;/button&gt;
+
+			&lt;p id=&quot;dies&quot;&gt;&lt;/p&gt;
+
+			&lt;script&gt;
+			function myFunction() {
+			var day;
+			switch (new Date().getDay()) {
+			case 0:
+			day = &quot;Diumenge&quot;;
+			break;
+			case 1:
+			day = &quot;Dilluns&quot;;
+			break;
+			case 2:
+			day = &quot;Dimarts&quot;;
+			break;
+			case 3:
+			day = &quot;Dimecres&quot;;
+			break;
+			case 4:
+			day = &quot;dijous&quot;;
+			break;
+			case 5:
+			day = &quot;Divendres&quot;;
+			break;
+			case 6:
+			day = &quot;Dissabte&quot;;
+			break;
+			}
+			document.getElementById(&quot;dies&quot;).innerHTML = 
+			&quot;Avui es &quot; + day;
+			}
+			&lt;/script&gt;
+		</pre>
+		</td>
+		<td>
+			<button onclick="C()">Try it</button>
+
+			<p id="dies"></p>
+
+			<script>
+			function C() {
+				var day;
+				switch (new Date().getDay()) {
+					case 0:
+						day = "Diumnge";
+						break;
+					case 1:
+						day = "Dilluns";
+						break;
+					case 2:
+						day = "Dimarts";
+						break;
+					case 3:
+						day = "Dimecres";
+						break;
+					case 4:
+						day = "Dijous";
+						break;
+					case 5:
+						day = "Divendres";
+						break;
+					case  6:
+						day = "Dissabte";
+						break;
+				}
+				document.getElementById("dies").innerHTML = "Avui es " + day;
+			}
+			</script>
+		</td>
+	</tr>
+	<tr>
+		<td class="capcalera">Loop For</td>
+		<td>
+			<p>Mostrar amb un For el cotxes recorrent un array</p>
+		<pre>
+			&lt;p id=&quot;cotxes&quot;&gt;&lt;/p&gt;
+
+			&lt;script&gt;
+			cars = [&quot;BMW&quot;, &quot;Volvo&quot;, &quot;Saab&quot;, &quot;Ford&quot;];
+			text = &quot;&quot;;
+			var i;
+			for (i = 0; i &lt; cars.length; i++) {
+			text += cars[i] + &quot;&lt;br&gt;&quot;;
+			}
+
+			document.getElementById(&quot;cotxes&quot;).innerHTML = text;
+			&lt;/script&gt;
+		</pre>
+		</td>
+		<td>
+			<p id="cotxes"></p>
+
+			<script>
+			cars = ["BMW", "Volvo", "Saab", "Ford"];
+			text = "";
+			var i;
+			for (i = 0; i < cars.length; i++) {
+				text += cars[i] + "<br>";
+			}
+
+			document.getElementById("cotxes").innerHTML = text;
+			</script>
+		</td>
+	</tr>
+	<tr>
+		<td class="capcalera">Loop while</td>
+		<td>
+			<p>Mostar els nombres amb un while aprentant un botó</p>
+		<pre>
+			&lt;button onclick=&quot;myFunction()&quot;&gt;Try it&lt;/button&gt;
+
+			&lt;p id=&quot;numlist&quot;&gt;&lt;/p&gt;
+
+			&lt;script&gt;
+			function myFunction() {
+			var text = &quot;&quot;;
+			var i = 0;
+			while (i &lt; 10) {
+			text += &quot;&lt;br&gt;El nombre es &quot; + i;
+			i++;
+			}
+			document.getElementById(&quot;numlist&quot;).innerHTML = text;
+			}
+			&lt;/script&gt;
+		</pre>
+		</td>
+		<td>
+			<button onclick="D()">Try it</button>
+
+			<p id="numlist"></p>
+
+			<script>
+			function D() {
+				var text = "";
+				var i = 0;
+				while (i < 10) {
+					text += "<br>El nombre es " + i;
+					i++;
+				}
+				document.getElementById("numlist").innerHTML = text;
+			}
+			</script>
+		</td>
+	</tr>
+
+	</table>	
+</body>
+</html>
