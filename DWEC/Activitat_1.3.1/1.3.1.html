@@ -11,16 +11,23 @@
 		<button onclick="ciutadaPAR()">PAR</button>
 		
 		<p id="ciutat"></p>
+		<p id="continent"></p>
 		
 		<script>
+			var elMeuContinentEs="Europa";
+			
 			function ciutadaBCN(){ <!--Funció cridada quan cliquem el de BCN-->
 				var josocde="Barcelona";
-				document.getElementById("ciutat").innerHTML = josocde; <!--Mostra la variable "josocde".-->
+				document.getElementById("ciutat").innerHTML = "jo soc d'un pais d'"+elMeuContinentEs; <!--Mostra la variable "josocde".-->
+				<!--Mostra el continent agafant-lo de la variable externa-->
+				document.getElementById("continent").innerHTML = "i el meu continent es "+elMeuContinentEs;
 			}
 			
 			function ciutadaPAR(){ <!--Funció cridada quan cliquem el de PAR-->
 				var josocde="Paris";
-				document.getElementById("ciutat").innerHTML = josocde;<!--Mostra la variable "josocde".-->
+				document.getElementById("ciutat").innerHTML = "jo soc de "+josocde;<!--Mostra la variable "josocde".-->
+				<!--Mostra el continent agafant-lo de la variable externa-->
+				document.getElementById("continent").innerHTML = "i el meu continent es "+elMeuContinentEs;
 			}
 		</script>
 	</body>
