@@ -1,0 +1,27 @@
+﻿<html>
+	<head>
+		<meta charset="utf-8">  
+		<title>Activitat 1.3.1</title>
+	</head>
+	<body>
+		<p> Funció amb botó per dir la ciutat d'on ets</p>
+		
+		<!--botons a clicar-->
+		<button onclick="ciutadaBCN()">BCN</button>
+		<button onclick="ciutadaPAR()">PAR</button>
+		
+		<p id="ciutat"></p>
+		
+		<script>
+			function ciutadaBCN(){ <!--Funció cridada quan cliquem el de BCN-->
+				var josocde="Barcelona";
+				document.getElementById("ciutat").innerHTML = josocde; <!--Mostra la variable "josocde".-->
+			}
+			
+			function ciutadaPAR(){ <!--Funció cridada quan cliquem el de PAR-->
+				var josocde="Paris";
+				document.getElementById("ciutat").innerHTML = josocde;<!--Mostra la variable "josocde".-->
+			}
+		</script>
+	</body>
+</html>

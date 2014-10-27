@@ -1,7 +1,50 @@
 <html>
 <head>
-	<link rel="stylesheet" type="text/css" href="Activitatexemplecss.css"/>
+	<!-- <link rel="stylesheet" type="text/css" href="Activitatexemplecss.css"/> -->
 	<title>Activitat 1.3</title>
+	<style>
+		body{
+			position:relative;
+			margin-left:20px;
+		}
+
+		h1{
+			text-align:center;
+		}
+
+		table,tr,td,caption{
+			border: 1px solid;
+			border-collapse: collapse;
+		}
+
+
+		table{
+			box-shadow:9px 11px 22px -4px rgba(102,97,102,1);
+			background-color: #CCC;
+			border-radius: 5px;
+		}
+
+		.capcalera{
+			text-align: center;
+			font-weight: bold;
+			background-color: #0033CC;
+			color: white;
+		}
+
+		p{
+			font-weight: bold;
+		}	
+
+		caption{
+			text-align: center;
+			font-weight: bold;
+			font-size: 20pt;
+			background-color: #000000;
+			color: white;
+			box-shadow: 9px 11px 22px -4px rgba(102,97,102,1);
+			border-radius: 5px;
+		}
+	</style>
 </head>
 <body>
 	<h1>Activitat 1.3</h1>
@@ -22,14 +65,14 @@
 
 			&lt;script&gt;
 
-			var x = 5;
-			var y = 6;
-			document.getElementById(&quot;num&quot;).innerHTML = x + y;
-			document.getElementById(&quot;num&quot;).innerHTML = x;
-			document.getElementById(&quot;num&quot;).innerHTML = y;
+				var x = 5;
+				var y = 6;
+				document.getElementById(&quot;num&quot;).innerHTML = x + y;
+				document.getElementById(&quot;num&quot;).innerHTML = x;
+				document.getElementById(&quot;num&quot;).innerHTML = y;
 
 			&lt;script&gt;
-			&lt;/pre&gt;
+			</pre
 		</td>
 		<td>
 			<p id="num"/>
@@ -76,12 +119,12 @@
 			&lt;p id=&quot;demo&quot;&gt;&lt;/p&gt;
 
 			&lt;script&gt;
-			var person = {firstName:&quot;John&quot;, 
-			lastName:&quot;Doe&quot;, 
-			age:50, eyeColor:&quot;blue&quot;};
+				var person = {firstName:&quot;John&quot;, 
+				lastName:&quot;Doe&quot;, 
+				age:50, eyeColor:&quot;blue&quot;};
 
-			document.getElementById(&quot;demo&quot;).innerHTML =
-			person.firstName + &quot; te &quot; + person.age + &quot; anys.&quot;;
+				document.getElementById(&quot;demo&quot;).innerHTML =
+				person.firstName + &quot; te &quot; + person.age + &quot; anys.&quot;;
 			&lt;/script&gt;
 			</pre>
 		</td>
@@ -104,11 +147,11 @@
 			&lt;id=&quot;ex&quot;&gt;
 
 			&lt;script&gt;
-			function myFunction(a, b) {
-			return a * b;
-			}
-			document.getElementById(&quot;ex&quot;).innerHTML = 
-			myFunction(4, 3);
+				function myFunction(a, b) {
+				return a * b;
+				}
+				document.getElementById(&quot;ex&quot;).innerHTML = 
+				myFunction(4, 3);
 			&lt;/script&gt;
 			</pre>
 		</td>
@@ -134,17 +177,16 @@
 
 			&lt;script&gt;
 
-			var x = 5 + 5;
-			var y = &quot;5&quot; + 5;
-			var z = &quot;Hello&quot; + 5;
+				var x = 5 + 5;
+				var y = &quot;5&quot; + 5;
+				var z = &quot;Hello&quot; + 5;
 
-			document.getElementById(&quot;sumes&quot;).innerHTML =
-			x + &quot;&lt;br&gt;&quot; +
-			y + &quot;&lt;br&gt;&quot; +
-			z;
+				document.getElementById(&quot;sumes&quot;).innerHTML =
+				x + &quot;&lt;br&gt;&quot; +
+				y + &quot;&lt;br&gt;&quot; +
+				z;
 
 			&lt;/script&gt;
-						/script>
 
 			</pre>
 		</td>
@@ -170,7 +212,7 @@
 	<tr>
 		<td class="capcalera">Comparisons</td>
 		<td>
-			<p>Comparar l'edat amb un botÃ³</p>
+			<p>Comprovar l'edat amb un botó</p>
 			
 			<pre>
 			&lt;input id=&quot;age&quot; value=&quot;18&quot; /&gt;
@@ -180,14 +222,14 @@
 			&lt;p id=&quot;pro&quot;&gt;&lt;/p&gt;
 
 			&lt;script&gt;
-			function myFunction() {
-			var age,voteable;
-			age = document.getElementById(&quot;age&quot;).value;
-			voteable = (age &lt; 18) ? &quot;
-			Massa Jove&quot;:&quot;Edat adequada&quot;;
-			document.getElementById(&quot;pro&quot;).innerHTML =
-			voteable + &quot; per votar.&quot;;
-			}
+				function myFunction() {
+				var age,voteable;
+				age = document.getElementById(&quot;age&quot;).value;
+				voteable = (age &lt; 18) ? &quot;
+				Massa Jove&quot;:&quot;Edat adequada&quot;;
+				document.getElementById(&quot;pro&quot;).innerHTML =
+				voteable + &quot; per votar.&quot;;
+				}
 			&lt;/script&gt;
 			</pre>
 		</td>
@@ -213,22 +255,22 @@
 	<tr>
 		<td class="capcalera">Conditions</td>
 		<td>
-			<p>Condicions segons l'hora actual amb un botÃ³</p>
+			<p>Condicions segons l'hora actual amb un botó</p>
 		<pre>
 			&lt;button onclick=&quot;myFunction()&quot;&gt;Clica&lt;/button&gt;
 
 			&lt;p id=&quot;dia&quot;&gt;&lt;/p&gt;
 
 			&lt;script&gt;
-			function myFunction() {
-			var greeting;
-			if (new Date().getHours() &lt; 20) {
-			greeting = &quot;Bon dia!!&quot;;
-			} else {
-			greeting = &quot;Bona nit&quot;;
-			}
-			document.getElementById(&quot;dia&quot;).innerHTML = greeting;
-			}
+				function myFunction() {
+				var greeting;
+				if (new Date().getHours() &lt; 20) {
+				greeting = &quot;Bon dia!!&quot;;
+				} else {
+				greeting = &quot;Bona nit&quot;;
+				}
+				document.getElementById(&quot;dia&quot;).innerHTML = greeting;
+				}
 			&lt;/script&gt;
 		</pre>
 		</td>
@@ -253,7 +295,7 @@
 	<tr>
 		<td class="capcalera">Switch</td>
 		<td>
-			<p>Switch amb botÃ³ que et diu el dia actual</p>
+			<p>Switch amb botó que et diu el dia actual</p>
 			
 		<pre>
 			&lt;button onclick=&quot;myFunction()&quot;&gt;Try it&lt;/button&gt;
@@ -261,34 +303,34 @@
 			&lt;p id=&quot;dies&quot;&gt;&lt;/p&gt;
 
 			&lt;script&gt;
-			function myFunction() {
-			var day;
-			switch (new Date().getDay()) {
-			case 0:
-			day = &quot;Diumenge&quot;;
-			break;
-			case 1:
-			day = &quot;Dilluns&quot;;
-			break;
-			case 2:
-			day = &quot;Dimarts&quot;;
-			break;
-			case 3:
-			day = &quot;Dimecres&quot;;
-			break;
-			case 4:
-			day = &quot;dijous&quot;;
-			break;
-			case 5:
-			day = &quot;Divendres&quot;;
-			break;
-			case 6:
-			day = &quot;Dissabte&quot;;
-			break;
-			}
-			document.getElementById(&quot;dies&quot;).innerHTML = 
-			&quot;Avui es &quot; + day;
-			}
+				function myFunction() {
+				var day;
+				switch (new Date().getDay()) {
+				case 0:
+				day = &quot;Diumenge&quot;;
+				break;
+				case 1:
+				day = &quot;Dilluns&quot;;
+				break;
+				case 2:
+				day = &quot;Dimarts&quot;;
+				break;
+				case 3:
+				day = &quot;Dimecres&quot;;
+				break;
+				case 4:
+				day = &quot;dijous&quot;;
+				break;
+				case 5:
+				day = &quot;Divendres&quot;;
+				break;
+				case 6:
+				day = &quot;Dissabte&quot;;
+				break;
+				}
+				document.getElementById(&quot;dies&quot;).innerHTML = 
+				&quot;Avui es &quot; + day;
+				}
 			&lt;/script&gt;
 		</pre>
 		</td>
@@ -336,14 +378,14 @@
 			&lt;p id=&quot;cotxes&quot;&gt;&lt;/p&gt;
 
 			&lt;script&gt;
-			cars = [&quot;BMW&quot;, &quot;Volvo&quot;, &quot;Saab&quot;, &quot;Ford&quot;];
-			text = &quot;&quot;;
-			var i;
-			for (i = 0; i &lt; cars.length; i++) {
-			text += cars[i] + &quot;&lt;br&gt;&quot;;
-			}
+				cars = [&quot;BMW&quot;, &quot;Volvo&quot;, &quot;Saab&quot;, &quot;Ford&quot;];
+				text = &quot;&quot;;
+				var i;
+				for (i = 0; i &lt; cars.length; i++) {
+				text += cars[i] + &quot;&lt;br&gt;&quot;;
+				}
 
-			document.getElementById(&quot;cotxes&quot;).innerHTML = text;
+				document.getElementById(&quot;cotxes&quot;).innerHTML = text;
 			&lt;/script&gt;
 		</pre>
 		</td>
@@ -365,22 +407,22 @@
 	<tr>
 		<td class="capcalera">Loop while</td>
 		<td>
-			<p>Mostar els nombres amb un while aprentant un botÃ³</p>
+			<p>Mostar els nombres amb un while aprentant un botó</p>
 		<pre>
 			&lt;button onclick=&quot;myFunction()&quot;&gt;Try it&lt;/button&gt;
 
 			&lt;p id=&quot;numlist&quot;&gt;&lt;/p&gt;
 
 			&lt;script&gt;
-			function myFunction() {
-			var text = &quot;&quot;;
-			var i = 0;
-			while (i &lt; 10) {
-			text += &quot;&lt;br&gt;El nombre es &quot; + i;
-			i++;
-			}
-			document.getElementById(&quot;numlist&quot;).innerHTML = text;
-			}
+				function myFunction() {
+				var text = &quot;&quot;;
+				var i = 0;
+				while (i &lt; 10) {
+				text += &quot;&lt;br&gt;El nombre es &quot; + i;
+				i++;
+				}
+				document.getElementById(&quot;numlist&quot;).innerHTML = text;
+				}
 			&lt;/script&gt;
 		</pre>
 		</td>
