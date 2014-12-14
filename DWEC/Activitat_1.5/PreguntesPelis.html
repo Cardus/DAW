@@ -1,0 +1,277 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-15">
+		<style>
+
+			#form1{
+				width: 400px;
+				margin: 0 auto;
+				display: block;
+			}
+
+			#form2{
+				width: 500px;
+				margin: 0 auto;
+				display: none;
+			}
+
+
+			#form3{
+				display: none;
+
+			}
+			.ordredades{
+				display: inline-block;
+				margin: 5px;
+				width: 150px;
+			}
+
+			#data{
+				text-align: right;
+			}
+			button{
+				float: right;
+			}
+
+			#reinici{
+				float:left;
+			}
+
+		</style>
+	</head>
+	<body>
+		<div id="content">
+
+			<div id="form1">
+				<form>
+					<fieldset>
+						<legend>Test!!</legend>
+
+						<p id="data"></p>
+
+						<label class="ordredades">Nom:</label>
+						<input id="nom" class="ordredades" type="text" value="" name"nom">
+						<br>
+						<label class="ordredades" >Data naixement:</label>
+						<input id="datanaix" class="ordredades" type="date" value="" name="datanaix">
+
+						
+					</fieldset>
+				</form>
+				<button onclick="demanaDades()" >Som-hi</button>
+			</div>
+
+			<div id="form2">
+				<form >
+					<fieldset>
+						<legend>Preguntes!!</legend>
+
+						<label class="ordre" ><b>Quin tipus de personatge t'agrada en una pelicula?</b></label>
+						<br>
+						<input class="ordre" type="radio" name="pregunta1" value="extrany">Extrany
+						<input class="ordre" type="radio" name="pregunta1" value="valent">Valent
+						<input class="ordre" type="radio" name="pregunta1" value="cabrejat">Cabrejat
+						<br><br>
+
+						<label class="ordre" ><b>Tria quin tipus de pelicula tagrada més?</b></label>
+						<br>
+						<input class="ordre" type="radio" name="pregunta2" value="ficcio">Ficcio
+						<input class="ordre" type="radio" name="pregunta2" value="animacio">Accio
+						<input class="ordre" type="radio" name="pregunta2" value="intria">Polemica
+						<br><br>
+
+						<label class="ordre" ><b>Quin actor tagrada mes?</b></label>
+						<br>
+						<input class="ordre" type="radio" name="pregunta3" value="dio">Dio
+						<input class="ordre" type="radio" name="pregunta3" value="bruce">Bruce willis
+						<input class="ordre" type="radio" name="pregunta3" value="robert">Robert de niro	
+						<br><br>
+
+						<label class="ordre" ><b>Quin ambient prefereixes?</b></label>
+						<br>
+						<input class="ordre" type="radio" name="pregunta4" value="antiga">Zona antiga
+						<input class="ordre" type="radio" name="pregunta4" value="ciutat">Ciutat
+						<input class="ordre" type="radio" name="pregunta4" value="afores">Afores
+						<br><br>
+
+						<label class="ordre" ><b>Quina pelicula t'agrada mes?</b></label>
+						<br>
+						<input class="ordre" type="radio" name="pregunta5" value="historia">La historia interminable
+						<input class="ordre" type="radio" name="pregunta5" value="trans">Transporter
+						<input class="ordre" type="radio" name="pregunta5" value="dollar">million dollar baby						
+						<br><br>
+
+					</fieldset>
+				</form>
+				<button onclick="Respostes()">Resultat!</button>
+			</div>
+
+			<div id="form3">
+				<p id="printarResposta"></p>
+				<div id="imatges">
+					
+				</div>
+				<button id="reinici" onclick="Reset()">Reiniciar?</button>
+			</div>
+		</div>
+
+		<script>
+			var meses = new Array ("Gener","Febrer","Març","Abril","Maig","Juny","Juliol","Agost","Setembre","Octubre","Novembre","Desembre");
+			var diasSemana = new Array("Diumenge","Dilluns","Dimarts","Dimecres","Dijous","Divendres","Dissabte");
+			var f=new Date();
+			document.getElementById("data").innerHTML=(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
+
+			//------------------------------------------------------------------------
+
+			var fo1 = document.getElementById("form1");
+			var fo2 = document.getElementById("form2");
+			var fo3 = document.getElementById("form3");
+
+			function demanaDades(){	
+
+				var nom=document.getElementById("nom");
+				var datanaix=document.getElementById("datanaix");
+
+		           fo1.style.display = 'none';
+		           fo2.style.display ='block';
+
+			}
+
+			//------------------------------------------------------------------------	
+
+			var Laberinto=0;
+			var Torino=0;
+			var Mercenarios=0;
+
+			function Respostes(){
+
+				var ids=["pregunta1","pregunta2","pregunta3","pregunta4","pregunta5"];
+
+				for(i=0;i<ids.length;i++){
+
+					var pregunta=document.getElementsByName(ids[i]);
+
+					for (j=0;j<pregunta.length;j++){
+
+						if(pregunta[0].checked){
+							Laberinto++;
+						}else if(pregunta[1].checked){
+							Mercenarios++;
+						}else if(pregunta[2].checked){
+							Torino++;
+						}
+					}
+			    }
+
+				fo2.style.display='none';
+				fo3.style.display='block';
+
+				mostraImatges();
+			}
+
+
+			//----------------------------------------------------------------------
+			var arrayLaberinto=[ "http://es.web.img1.acsta.net/r_640_600/b_1_d6d6d6/medias/nmedia/18/77/68/91/20531609.jpg",
+								"http://imagenes.sensacine.com/r_640_600/b_1_d6d6d6/medias/nmedia/18/62/90/40/18658327.jpg",
+								"http://es.web.img1.acsta.net/r_640_600/b_1_d6d6d6/medias/nmedia/18/62/90/40/19087846.jpg",
+								"http://imagenes.sensacine.com/r_640_600/b_1_d6d6d6/medias/nmedia/18/62/90/40/19087848.jpg",
+								"http://es.web.img2.acsta.net/r_640_600/b_1_d6d6d6/medias/nmedia/18/62/90/40/19087850.jpg"];
+
+			var arrayTorino=["   http://es.web.img2.acsta.net/r_640_600/b_1_d6d6d6/pictures/210/096/21009604_20130530232058293.jpg",
+								"http://es.web.img3.acsta.net/r_640_600/b_1_d6d6d6/medias/nmedia/18/67/90/91/19018384.jpg",
+								"http://es.web.img2.acsta.net/r_640_600/b_1_d6d6d6/medias/nmedia/18/67/90/93/19050643.jpg",
+								"http://es.web.img3.acsta.net/r_640_600/b_1_d6d6d6/medias/nmedia/18/67/90/93/19022573.jpg",
+								"http://es.web.img2.acsta.net/r_640_600/b_1_d6d6d6/medias/nmedia/18/67/90/93/19022578.jpg"];
+
+			var arrayMercenarios=[  "http://es.web.img1.acsta.net/r_640_600/b_1_d6d6d6/medias/nmedia/18/78/35/07/20235442.jpg",
+									"http://es.web.img1.acsta.net/r_640_600/b_1_d6d6d6/medias/nmedia/18/70/17/56/19415609.jpg",
+									"http://es.web.img3.acsta.net/r_640_600/b_1_d6d6d6/medias/nmedia/18/70/28/80/19127171.jpg",
+									"http://es.web.img2.acsta.net/r_640_600/b_1_d6d6d6/medias/nmedia/18/70/17/56/19090257.jpg",
+									"http://es.web.img2.acsta.net/r_640_600/b_1_d6d6d6/medias/nmedia/18/78/57/80/19472886.jpg"];
+
+			var arrayLio=[  "http://es.web.img1.acsta.net/r_640_600/b_1_d6d6d6/medias/nmedia/18/77/68/91/20531609.jpg",
+							"http://es.web.img2.acsta.net/r_640_600/b_1_d6d6d6/pictures/210/096/21009604_20130530232058293.jpg",
+							"http://es.web.img1.acsta.net/r_640_600/b_1_d6d6d6/medias/nmedia/18/78/35/07/20235442.jpg",
+							"http://es.web.img2.acsta.net/r_640_600/b_1_d6d6d6/medias/nmedia/18/70/17/56/19090257.jpg",
+							"http://imagenes.sensacine.com/r_640_600/b_1_d6d6d6/medias/nmedia/18/62/90/40/19087848.jpg"
+							 ];
+
+			var carpetaimatges={};
+
+			function mostraImatges(){
+			
+				if(Laberinto>Torino && Laberinto>Mercenarios){
+					carregarImatges(arrayLaberinto, main);
+					document.getElementById("printarResposta").innerHTML="La pelicula que et defineix es: Laberinto!!";
+				}else if(Torino>Laberinto && Torino>Mercenarios){
+					carregarImatges(arrayTorino, main);
+					document.getElementById("printarResposta").innerHTML="La pelicula que et defineix es: Gran Torino!!";
+				}else if(Mercenarios>Laberinto && Mercenarios>Torino){
+					carregarImatges(arrayMercenarios, main);
+					document.getElementById("printarResposta").innerHTML="La pelicula que et defineix es: Los Mercenarios!!";
+				}else{
+					carregarImatges(arrayLio, main);
+					document.getElementById("printarResposta").innerHTML="No t'aclares, t'agraden tots els tipus de pelis!!";
+				}
+				
+			}
+
+			function carregarImatges(arrayimatges,callback){
+					
+					var contimatgescarregades=0;
+					
+					for(var src in arrayimatges){
+						carpetaimatges[src]= new Image();
+						carpetaimatges[src].onload= function(){
+							if(++contimatgescarregades==arrayimatges.length){	 //Bucle per carregar les imatges dins un array{}
+								callback();
+							}
+						};
+						carpetaimatges[src].src=arrayimatges[src];
+					}	
+				}
+
+			function main(){
+				var primera=true;
+				var cont=0;
+				var x;
+				var trobat=false;
+				var randoms=[];
+				document.getElementById("imatges").innerHTML="";
+				while(cont<5){									//bucle per mostrar 5 imatges aleatories
+					trobat=false;	
+					x= Math.floor((Math.random() * 5));
+					for(i=0;i<randoms.length;i++){
+						if(x==randoms[i]){
+							trobat=true;				//busca si el random aconseguit ja existeix dins un array de randoms
+						}								//si ja existex, no fa res, si no imprimeix la imatge en posicio x
+					}
+					if(trobat!=true){
+						if(primera==true){
+							randoms[cont]=x;
+							document.getElementById("imatges").innerHTML+="<img src="+carpetaimatges[x].src+" width='400' height='450'> <br>";
+							cont++;
+							primera=false;
+						}else{
+							randoms[cont]=x;
+							document.getElementById("imatges").innerHTML+="<img src="+carpetaimatges[x].src+" width='200' height='200' >";
+							cont++;
+						}
+					}
+				}
+			}
+
+//---------------------------------------------------------------------------------------------------
+
+			function Reset(){
+				fo3.style.display='none';
+				fo1.style.display="block";
+
+				
+			}
+
+
+
+		</script>
+	</body>
+</html>
