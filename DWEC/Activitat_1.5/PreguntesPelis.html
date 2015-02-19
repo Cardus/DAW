@@ -1,7 +1,41 @@
 <html>
 	<head>
-		<meta http-equiv="Content-Type" content="text/html;charset=ISO-8859-15">
+		<meta charset="UTF-8">
 		<style>
+
+			body{
+				background-image: url("http://wallpaperstock.net/the-hunger-games-catching-fire-katniss-everdeen_wallpapers_37546_1280x1024.jpg");
+				background-repeat: no-repeat;
+				background-size: 100%;
+			}
+
+			form{
+				font-weight: bold;
+				border-radius: 10px;
+				padding: 5px;
+				margin: 100px auto 10px auto;
+				font-family: monospace;
+				color: snow;
+				background-color: rgba(0, 0, 0, 0.6);
+			}
+
+			button{
+				box-shadow:inset 0px 1px 0px 0px #fce2c1;
+				background:linear-gradient(to bottom, #ffc477 5%, #fb9e25 100%);
+				border-radius:6px;
+				border:1px solid #eeb44f;
+				padding:6px 24px;
+				text-shadow:0px 1px 0px #cc9f52;
+				color: rgb(74, 74, 74);
+				display: block;
+				margin: 0 auto;
+				font-size: 12pt;
+				font-weight: bold;
+			}
+
+			button:hover{
+				cursor: pointer;
+			}
 
 			#form1{
 				width: 400px;
@@ -15,11 +49,19 @@
 				display: none;
 			}
 
-
 			#form3{
 				display: none;
-
+				width: 820px;
+				margin: auto auto 10px auto;
 			}
+
+			#printarResposta{
+				color: snow;
+				text-align: center;
+				font-size: 18pt;
+			}
+
+
 			.ordredades{
 				display: inline-block;
 				margin: 5px;
@@ -29,13 +71,24 @@
 			#data{
 				text-align: right;
 			}
-			button{
-				float: right;
-			}
 
 			#reinici{
-				float:left;
+				margin: 0 auto;
+				display: block;
 			}
+
+			#gif{
+				 -webkit-animation: myfirst 10s linear 1s infinite normal;
+				  position: relative;
+				  float:right;
+			}
+
+			@-webkit-keyframes myfirst {
+			    0%   {right:0px; top: 0px; opacity: 0}
+			    100% { right: 100%; top: 0px; }
+			    
+			} 
+
 
 		</style>
 	</head>
@@ -44,9 +97,7 @@
 
 			<div id="form1">
 				<form>
-					<fieldset>
-						<legend>Test!!</legend>
-
+					
 						<p id="data"></p>
 
 						<label class="ordredades">Nom:</label>
@@ -55,17 +106,16 @@
 						<label class="ordredades" >Data naixement:</label>
 						<input id="datanaix" class="ordredades" type="date" value="" name="datanaix">
 
-						
-					</fieldset>
+						<p id="tries"></p>
+
 				</form>
+
 				<button onclick="demanaDades()" >Som-hi</button>
 			</div>
 
 			<div id="form2">
+				<h3 style="display: table; margin: auto auto -50px auto; color: snow; ">Respon a les preguntes</h3>
 				<form >
-					<fieldset>
-						<legend>Preguntes!!</legend>
-
 						<label class="ordre" ><b>Quin tipus de personatge t'agrada en una pelicula?</b></label>
 						<br>
 						<input class="ordre" type="radio" name="pregunta1" value="extrany">Extrany
@@ -94,47 +144,86 @@
 						<input class="ordre" type="radio" name="pregunta4" value="afores">Afores
 						<br><br>
 
-						<label class="ordre" ><b>Quina pelicula t'agrada mes?</b></label>
+						<label class="ordre" ><b>Quina pelicula t'agrada més?</b></label>
 						<br>
 						<input class="ordre" type="radio" name="pregunta5" value="historia">La historia interminable
 						<input class="ordre" type="radio" name="pregunta5" value="trans">Transporter
 						<input class="ordre" type="radio" name="pregunta5" value="dollar">million dollar baby						
 						<br><br>
 
-					</fieldset>
 				</form>
 				<button onclick="Respostes()">Resultat!</button>
 			</div>
 
 			<div id="form3">
-				<p id="printarResposta"></p>
+				<h3 id="printarResposta"></h3>
 				<div id="imatges">
 					
 				</div>
+				<br>
 				<button id="reinici" onclick="Reset()">Reiniciar?</button>
 			</div>
 		</div>
 
+		<img id="gif" src="http://www.gifss.com/animales_fantasticos/draco1.gif">
+
 		<script>
+
+			function setCookie(cname, cvalue, exdays) {
+			    var d = new Date();
+			    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+			    var expires = "expires="+d.toUTCString();
+			    document.cookie = cname + "=" + cvalue + "; " + expires;
+			}
+
+			function getCookie(cname) {
+			    var name = cname + "=";
+			    var ca = document.cookie.split(';');
+			    for(var i=0; i<ca.length; i++) {
+			        var c = ca[i];
+			        while (c.charAt(0)==' ') c = c.substring(1);
+			        if (c.indexOf(name) != -1) return c.substring(name.length, c.length);
+			    }
+			    return "";
+			}
+
+			function checkCookie() {
+			    var user = getCookie("username");
+			    if (user != "") {
+			        alert("Hola de nou " + user);
+			    }
+			}
+
+			checkCookie()
+
+			var tries=0;
+
 			var meses = new Array ("Gener","Febrer","Març","Abril","Maig","Juny","Juliol","Agost","Setembre","Octubre","Novembre","Desembre");
 			var diasSemana = new Array("Diumenge","Dilluns","Dimarts","Dimecres","Dijous","Divendres","Dissabte");
 			var f=new Date();
 			document.getElementById("data").innerHTML=(diasSemana[f.getDay()] + ", " + f.getDate() + " de " + meses[f.getMonth()] + " de " + f.getFullYear());
+
+			document.getElementById("tries").innerHTML="Cops que has fet el test: "+tries;
 
 			//------------------------------------------------------------------------
 
 			var fo1 = document.getElementById("form1");
 			var fo2 = document.getElementById("form2");
 			var fo3 = document.getElementById("form3");
+			
 
 			function demanaDades(){	
 
-				var nom=document.getElementById("nom");
+				var nom=document.getElementById("nom").value;
+                var valorcookie=nom+" l'ultim cop vas fer el test "+tries+" cops";
 				var datanaix=document.getElementById("datanaix");
+				tries++;
+				
+		        fo1.style.display = 'none';
+		        fo2.style.display ='block';
 
-		           fo1.style.display = 'none';
-		           fo2.style.display ='block';
-
+		        setCookie("username",valorcookie,365);
+		        tries++;
 			}
 
 			//------------------------------------------------------------------------	
@@ -202,16 +291,16 @@
 			
 				if(Laberinto>Torino && Laberinto>Mercenarios){
 					carregarImatges(arrayLaberinto, main);
-					document.getElementById("printarResposta").innerHTML="La pelicula que et defineix es: Laberinto!!";
+					document.getElementById("printarResposta").innerHTML="La pel·licula que et defineix es: Laberinto!!";
 				}else if(Torino>Laberinto && Torino>Mercenarios){
 					carregarImatges(arrayTorino, main);
-					document.getElementById("printarResposta").innerHTML="La pelicula que et defineix es: Gran Torino!!";
+					document.getElementById("printarResposta").innerHTML="La pel·licula que et defineix es: Gran Torino!!";
 				}else if(Mercenarios>Laberinto && Mercenarios>Torino){
 					carregarImatges(arrayMercenarios, main);
-					document.getElementById("printarResposta").innerHTML="La pelicula que et defineix es: Los Mercenarios!!";
+					document.getElementById("printarResposta").innerHTML="La pel·licula que et defineix es: Los Mercenarios!!";
 				}else{
 					carregarImatges(arrayLio, main);
-					document.getElementById("printarResposta").innerHTML="No t'aclares, t'agraden tots els tipus de pelis!!";
+					document.getElementById("printarResposta").innerHTML="No t'aclares, t'agraden totes els tipus de pelis!!";
 				}
 				
 			}
@@ -249,12 +338,12 @@
 					if(trobat!=true){
 						if(primera==true){
 							randoms[cont]=x;
-							document.getElementById("imatges").innerHTML+="<img src="+carpetaimatges[x].src+" width='400' height='450'> <br>";
+							document.getElementById("imatges").innerHTML+="<img style='border-radius: 20px; display: block; margin: 0 auto;' src="+carpetaimatges[x].src+" width='400' height='450'> <br>";
 							cont++;
 							primera=false;
 						}else{
 							randoms[cont]=x;
-							document.getElementById("imatges").innerHTML+="<img src="+carpetaimatges[x].src+" width='200' height='200' >";
+							document.getElementById("imatges").innerHTML+="<img style=' margin-left: 5px; border-radius: 100px'src="+carpetaimatges[x].src+" width='200' height='200' >";
 							cont++;
 						}
 					}
@@ -266,12 +355,14 @@
 			function Reset(){
 				fo3.style.display='none';
 				fo1.style.display="block";
-
-				
+	
+				 document.getElementById("tries").innerHTML="Cops que has fet el test: "+tries;
+                
+                 Laberinto=0;
+			     Torino=0;
+			     Mercenarios=0;
 			}
-
-
-
+			
 		</script>
 	</body>
 </html>
